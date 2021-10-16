@@ -340,10 +340,10 @@ class App{
             return {group, get, set};
         }
 
-        groups.CHR = getBtnGroups("颜值", 0, 10); // 颜值 charm CHR
-        groups.INT = getBtnGroups("智力", 0, 10); // 智力 intelligence INT
-        groups.STR = getBtnGroups("体质", 0, 10); // 体质 strength STR
-        groups.MNY = getBtnGroups("家境", 0, 10); // 家境 money MNY
+        groups.CHR = getBtnGroups("理论", 0, 10); // 颜值 charm CHR
+        groups.INT = getBtnGroups("技术", 0, 10); // 智力 intelligence INT
+        groups.STR = getBtnGroups("人才", 0, 10); // 体质 strength STR
+        groups.MNY = getBtnGroups("政策", 0, 10); // 家境 money MNY
 
         const ul = propertyPage.find('#propertyAllocation');
 
@@ -446,11 +446,11 @@ class App{
                 }
                 const property = this.#life.getLastRecord();
                 $("#lifeProperty").html(`
-                <li><span>颜值</span><span>${property.CHR}</span></li>
-                <li><span>智力</span><span>${property.INT}</span></li>
-                <li><span>体质</span><span>${property.STR}</span></li>
-                <li><span>家境</span><span>${property.MNY}</span></li>
-                <li><span>快乐</span><span>${property.SPR}</span></li>
+                <li><span>理论</span><span>${property.CHR}</span></li>
+                <li><span>技术</span><span>${property.INT}</span></li>
+                <li><span>人才</span><span>${property.STR}</span></li>
+                <li><span>政策</span><span>${property.MNY}</span></li>
+                <li><span>资本</span><span>${property.SPR}</span></li>
                 `);
             });
         // html2canvas
@@ -462,7 +462,7 @@ class App{
                 domtoimage.toJpeg(document.getElementById('lifeTrajectory'))
                     .then(function (dataUrl) {
                         let link = document.createElement('a');
-                        link.download = '我的人生回放.jpeg';
+                        link.download = '城市人生回放.jpeg';
                         link.href = dataUrl;
                         link.click();
                         $("#lifeTrajectory").removeClass("deleteFixed");
@@ -517,12 +517,12 @@ class App{
         <div id="main">
             <div class="head">人生总结</div>
             <ul id="judge" class="judge">
-                <li class="grade2"><span>颜值：</span><span>9级 美若天仙</span></li>
-                <li class="grade0"><span>智力：</span><span>4级 智力一般</span></li>
-                <li class="grade0"><span>体质：</span><span>1级 极度虚弱</span></li>
-                <li class="grade0"><span>家境：</span><span>6级 小康之家</span></li>
-                <li class="grade0"><span>享年：</span><span>3岁 早夭</span></li>
-                <li class="grade0"><span>快乐：</span><span></span>3级 不太幸福的人生</li>
+                <li class="grade2"><span>理论：</span><span>9级 理论超高级</span></li>
+                <li class="grade0"><span>技术：</span><span>4级 技术一般</span></li>
+                <li class="grade0"><span>人才：</span><span>1级 极度缺乏</span></li>
+                <li class="grade0"><span>政策：</span><span>6级 政策支持</span></li>
+                <li class="grade0"><span>历史：</span><span>3岁 早夭</span></li>
+                <li class="grade0"><span>资本：</span><span></span>3级 不太富裕的城市</li>
             </ul>
             <div class="head" style="height:auto;">天赋，你可以选一个，下辈子还能抽到</div>
             <ul id="talents" class="selectlist" style="flex: 0 1 auto;">
@@ -757,12 +757,12 @@ class App{
                     };
 
                     judge.append(`
-                        ${format('颜值', 'CHR')}
-                        ${format('智力', 'INT')}
-                        ${format('体质', 'STR')}
-                        ${format('家境', 'MNY')}
-                        ${format('快乐', 'SPR')}
-                        ${format('享年', 'AGE')}
+                        ${format('理论', 'CHR')}
+                        ${format('技术', 'INT')}
+                        ${format('人才', 'STR')}
+                        ${format('政策', 'MNY')}
+                        ${format('资本', 'SPR')}
+                        ${format('历史', 'AGE')}
                         ${format('总评', 'SUM')}
                     `);
                 }
